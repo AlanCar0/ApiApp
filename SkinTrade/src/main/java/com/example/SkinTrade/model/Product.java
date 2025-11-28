@@ -25,15 +25,13 @@ public class Product {
     private String imagen;
     
     @Column(length = 1000)
-    private String description; // Agregado porque tu modelo Kotlin lo tiene
-
-    // --- CAMPOS NUEVOS PARA SOPORTAR TUS MODELOS ---
+    private String description;
     
-    // Discriminador: "skin", "agent", "case", "soundtrack"
+    //"skin", "agent", "case", "soundtrack"
     @Column(name = "product_type", nullable = false)
     private String productType;
 
-    // Campos específicos (Nullable porque no todos los tienen)
+    // Campos específicos
     private String category;       // Skins y Agents
     private String condition;      // Solo Skins
     private String author;         // Solo Soundtracks
